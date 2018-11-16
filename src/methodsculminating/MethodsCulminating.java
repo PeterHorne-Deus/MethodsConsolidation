@@ -10,6 +10,7 @@ package methodsculminating;
 import java.util.Scanner;
 import java.util.Random;
 
+
 public class MethodsCulminating {
     
     
@@ -18,6 +19,7 @@ public class MethodsCulminating {
         //Variables
         int play = 1;
         int num;
+        double total = 0;
         
         //Scanner Object
         Scanner keyedInput = new Scanner(System.in);
@@ -28,10 +30,10 @@ public class MethodsCulminating {
             num = desision(keyedInput);
             
             if (num > 5){
-                play = aboveFive(num,play,keyedInput);
+                play = aboveFive(num,play,keyedInput,total);
             }
             else if(num <= 5){               
-                underFive(num,keyedInput);
+                underFive(num,keyedInput,total);
             }
             
         }
@@ -46,6 +48,10 @@ public class MethodsCulminating {
      */
     public static int desision(Scanner keyedInput){        
         int num;
+        
+        //Clear a space from the last question
+        System.out.println("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n");
+        
         //Output 11 choices of things to do
         System.out.println("Enter a the number corresponding with the action you would like to do");
         
@@ -82,21 +88,21 @@ public class MethodsCulminating {
      * Calls the methods for 5 of the menu choices
      * @param num 
      */
-    public static int aboveFive(int num,int play,Scanner keyedInput){
+    public static int aboveFive(int num,int play,Scanner keyedInput,double total){
         if (num == 6){
-            
+            areaCircle(keyedInput,total);
         }
-        if (num == 7){
-            
+        else if (num == 7){
+            pTheorem(keyedInput,total);
         }
-        if (num == 8){
-            
+        else if (num == 8){
+            multiply(keyedInput,total);
         }
-        if (num == 9){
-            
+        else if (num == 9){
+            divide(keyedInput,total);
         }
-        if (num == 10){
-            
+        else if (num == 10){
+            roundUp(keyedInput,total);
         }
         else if (num == 11){
             play = 2;
@@ -111,22 +117,22 @@ public class MethodsCulminating {
         return play;
     }
     
-    public static void underFive(int num, Scanner keyedInput){
+    public static void underFive(int num, Scanner keyedInput,double total){
 
         if (num == 5){
-            
+            areaRectangle(keyedInput,total);
         }
         else if (num == 4){
-            
+            ftc(keyedInput,total);
         }
         else if (num == 3){
-            
+            ctf(keyedInput,total);
         }
         else if (num == 2){
-            System.out.println("test");
+            squared(keyedInput,total);
         }
         else if (num == 1){
-            System.out.println("test");
+            sqrt(keyedInput,total);
         }
         else{
             
@@ -135,6 +141,106 @@ public class MethodsCulminating {
         }
     }
     
+    public static double roundUp(Scanner keyedInput, double total){
+        System.out.println("Enter a number you would like to round up");
+        total = keyedInput.nextDouble();
+        
+        Math.ceil(total);
+        
+        return total;
+    }
+    
+    public static double divide(Scanner keyedInput, double total){
+        double num1,num2;
+        System.out.println("Enter two numbers you would like to divide");
+        
+        System.out.println("Enter the first number");
+        num1 = keyedInput.nextDouble();
+        
+        System.out.println("Enter the second number");
+        num2 = keyedInput.nextDouble();
+        
+        total = num1/num2;
+        
+        return total;
+    }
+    
+    public static double multiply(Scanner keyedInput, double total){
+        double num1,num2;
+        System.out.println("Enter two numbers you would like to multiply");
+        
+        System.out.println("Enter the first number");
+        num1 = keyedInput.nextDouble();
+        
+        System.out.println("Enter the second number");
+        num2 = keyedInput.nextDouble();
+        
+        total = num1*num2;
+        
+        return total;
+    }
+    
+    public static double pTheorem(Scanner keyedInput, double total){
+        double num1,num2;
+        System.out.println("Enter two side lengths of a right side triangle");
+        
+        System.out.println("Enter the first length");
+        num1 = keyedInput.nextDouble();
+        
+        System.out.println("Enter the second length");
+        num2 = keyedInput.nextDouble();
+        
+        total = Math.sqrt(Math.pow(num1,2) + Math.pow(num2,2));
+        
+        return total;
+    }
+    
+    public static double areaCircle(Scanner keyedInput, double total){
+        double num1;
+        System.out.println("Enter the radius of a circle");
+
+        num1 = keyedInput.nextDouble();
+        
+        
+        total = Math.PI * Math.pow(num1,2);
+        
+        return total;
+    }
+    
+    public static double areaRectangle(Scanner keyedInput, double total){
+        double num1,num2;
+        System.out.println("Enter two side lengths of a rectangle");
+        
+        System.out.println("Enter the first length");
+        num1 = keyedInput.nextDouble();
+        
+        System.out.println("Enter the second length");
+        num2 = keyedInput.nextDouble();
+        
+        total = num1 * num2;
+        
+        return total;
+    }
+    
+    public static void ftc(Scanner keyedInput, double total){
+        
+    }
+    
+    public static void ctf(Scanner keyedInput, double total){
+        
+    }
+    
+    public static void squared(Scanner keyedInput, double total){
+        
+    }
+    
+    public static void sqrt(Scanner keyedInput, double total){
+        
+    }
+    
+    /**
+     * This method outputs a leaving message
+     */
     public static void bye(){
         System.out.println("Good Bye");
     }
