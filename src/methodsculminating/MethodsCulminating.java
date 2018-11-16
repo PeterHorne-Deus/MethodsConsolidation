@@ -121,6 +121,7 @@ public class MethodsCulminating {
 
         if (num == 5){
             areaRectangle(keyedInput,total);
+            
         }
         else if (num == 4){
             ftc(keyedInput,total);
@@ -141,15 +142,30 @@ public class MethodsCulminating {
         }
     }
     
+    /**
+     * rounds up a number
+     * @param keyedInput
+     * @param total
+     * @return total
+     */
     public static double roundUp(Scanner keyedInput, double total){
         System.out.println("Enter a number you would like to round up");
         total = keyedInput.nextDouble();
         
-        Math.ceil(total);
+        total = Math.ceil(total);
+        
+        System.out.println("The total is: " + total);
         
         return total;
+        
     }
     
+    /**
+     * divides two numbers
+     * @param keyedInput
+     * @param total
+     * @return total
+     */
     public static double divide(Scanner keyedInput, double total){
         double num1,num2;
         System.out.println("Enter two numbers you would like to divide");
@@ -162,9 +178,16 @@ public class MethodsCulminating {
         
         total = num1/num2;
         
+        System.out.println("The total is: " + total);
+        
         return total;
     }
-    
+    /**
+     * multiplys two numbers
+     * @param keyedInput
+     * @param total
+     * @return total
+     */
     public static double multiply(Scanner keyedInput, double total){
         double num1,num2;
         System.out.println("Enter two numbers you would like to multiply");
@@ -177,9 +200,17 @@ public class MethodsCulminating {
         
         total = num1*num2;
         
+        System.out.println("The total is: " + total);
+        
         return total;
     }
     
+    /**
+     * Does a pythagorems therom for a user specified triangle
+     * @param keyedInput
+     * @param total
+     * @return total
+     */
     public static double pTheorem(Scanner keyedInput, double total){
         double num1,num2;
         System.out.println("Enter two side lengths of a right side triangle");
@@ -192,9 +223,17 @@ public class MethodsCulminating {
         
         total = Math.sqrt(Math.pow(num1,2) + Math.pow(num2,2));
         
+        System.out.println("The total is: " + total);
+        
         return total;
     }
     
+    /**
+     * find the area of a circle with a users dimensions
+     * @param keyedInput
+     * @param total
+     * @return total
+     */
     public static double areaCircle(Scanner keyedInput, double total){
         double num1;
         System.out.println("Enter the radius of a circle");
@@ -204,9 +243,16 @@ public class MethodsCulminating {
         
         total = Math.PI * Math.pow(num1,2);
         
+        System.out.println("The total is: " + total + " units suqared");
+        
         return total;
     }
-    
+    /**
+     * find the area of a rectangle with user dimensions
+     * @param keyedInput
+     * @param total
+     * @return total
+     */
     public static double areaRectangle(Scanner keyedInput, double total){
         double num1,num2;
         System.out.println("Enter two side lengths of a rectangle");
@@ -219,23 +265,82 @@ public class MethodsCulminating {
         
         total = num1 * num2;
         
+        System.out.println("The total is: " + total + " units suqared");
+        
         return total;
     }
     
-    public static void ftc(Scanner keyedInput, double total){
+    /**
+     * Does a Fahrenheit to Celsius conversion
+     * @param keyedInput
+     * @param total
+     * @return total 
+     */
+    public static double ftc(Scanner keyedInput, double total){
+        double f;
         
+        System.out.println("Enter the tempurature in Fahrenheit");
+        f = keyedInput.nextDouble();
+        
+        total = (double)5/(double)9*(f - 32);
+        
+        System.out.println("The total is: " + total);
+        
+        return total;
     }
     
-    public static void ctf(Scanner keyedInput, double total){
+    /**
+     * Does a Celsius to Fahrenheit conversion
+     * @param keyedInput
+     * @param total
+     * @return total
+     */
+    public static double ctf(Scanner keyedInput, double total){
+        double c;
         
+        System.out.println("Enter the tempurature in Celcuis");
+        c = keyedInput.nextDouble();
+        
+        total = (double)9/(double)5*c + 32;
+        
+        System.out.println("The total is: " + total);
+        
+        return total;
     }
     
-    public static void squared(Scanner keyedInput, double total){
+    /**
+     * Squares a user entered number
+     * @param keyedInput
+     * @param total
+     * @return total
+     */
+    public static double squared(Scanner keyedInput, double total){
+        System.out.println("Enter a number you would like squared");
+        total = keyedInput.nextDouble();
         
+        total = Math.pow(total, 2);
+        
+        System.out.println("The total is: " + total);
+        
+        return total;
     }
     
-    public static void sqrt(Scanner keyedInput, double total){
+    /**
+     * Does the square root calculations of a user inputed number
+     * @param keyedInput
+     * @param total
+     * @return total
+     */
+    public static double sqrt(Scanner keyedInput, double total){
+        System.out.println("Enter a number you would like square rooted");
         
+        total = keyedInput.nextDouble();
+        
+        total = Math.sqrt(total);
+        
+        System.out.println("The total is: " + total);
+        
+        return total;
     }
     
     /**
